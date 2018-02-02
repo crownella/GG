@@ -2,6 +2,7 @@
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
+    public 
 
 	// Use this for initialization
 	void Start () {

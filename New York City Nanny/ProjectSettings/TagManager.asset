@@ -7,6 +7,23 @@ TagManager:
   - bedroom
   - Kitchen
   - Playroom
+  - Mainroom
+  - Door
+  - Park
+  - Museum
+  - Diaper
+  - Crib
+  - Feeding
+  - Choice 1
+  - Choice 2
+  - Choice 3
+  - Choice 4
+  - 'Choice 5 '
+  - Choice 6
+  - Choice 7
+  - Choice 8
+  - Choice 9
+  - Choice X
   layers:
   - Default
   - TransparentFX
