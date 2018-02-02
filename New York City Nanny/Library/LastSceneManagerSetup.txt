@@ -1,4 +1,16 @@
 sceneSetups:
 - path: Assets/scenes/Mainroom.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Bedroom.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Kitchen.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Playroom.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/Menu.unity
   isLoaded: 1
   isActive: 1
