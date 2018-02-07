@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public bool Park = false;
     public bool Museum = false;
     public bool Diaper = false;
+    public bool Cleaning = false;
+    public int FoodChoice = 0;
+    public bool FoodChosen = false;
 
     //meters
     public int Happiness = 70;
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -44,7 +47,7 @@ public class GameManager : MonoBehaviour
             if (hit)
             {
 
-            
+
                 if (hit.collider.gameObject.tag == "bedroom")
                 {
                     SceneN = hit.collider.gameObject.tag;
@@ -52,6 +55,14 @@ public class GameManager : MonoBehaviour
                     SceneManager.LoadScene(SceneN);
                     Crib = false;
                     Diaper = false;
+                }
+
+                if (hit.collider.gameObject.tag == "cleaning")
+                {
+                    SceneN = hit.collider.gameObject.tag;
+                    Debug.Log(SceneN);
+                    SceneManager.LoadScene(SceneN);
+                    Cleaning = true;
                 }
 
                 else if (hit.collider.gameObject.tag == "Kitchen")
@@ -80,7 +91,8 @@ public class GameManager : MonoBehaviour
                     Playroom = false;
                     Museum = false;
                     Park = false;
-                    
+                    Cleaning = false;
+
                 }
 
 
@@ -119,7 +131,7 @@ public class GameManager : MonoBehaviour
 
                 if (Door == true)
                 {
-           
+
                     if (hit.collider.gameObject.tag == "Park")
                     {
                         SceneN = hit.collider.gameObject.tag;
@@ -177,6 +189,114 @@ public class GameManager : MonoBehaviour
                     if (hit.collider.gameObject.tag == "Choice 1")
                     {
                         Debug.Log("Choice 1");
+                        FoodChoice = 1;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 2")
+                    {
+                        Debug.Log("Choice 2");
+                        FoodChoice = 2;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 3")
+                    {
+                        Debug.Log("Choice 3");
+                        FoodChoice = 3;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 4")
+                    {
+                        Debug.Log("Choice 4");
+                        FoodChoice = 4;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice X")
+                    {
+                        Debug.Log("Choice 5");
+                        FoodChoice = 5;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 6")
+                    {
+                        Debug.Log("Choice 6");
+                        FoodChoice = 6;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 7")
+                    {
+                        Debug.Log("Choice 7");
+                        FoodChoice = 7;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 8")
+                    {
+                        Debug.Log("Choice 8");
+                        FoodChoice = 8;
+                        FoodChosen = true;
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 9")
+                    {
+                        Debug.Log("Choice 9");
+                        FoodChoice = 9;
+                        FoodChosen = true;
+                    }
+                }
+                if (Feeding == true)
+                {
+                    if (hit.collider.gameObject.tag == "Choice 1")
+                    {
+                        Debug.Log("feeding");
+                        if (FoodChoice == 1)
+                        {
+                            Debug.Log("food 1");
+                        }
+                        if (FoodChoice == 2)
+                        {
+                            Debug.Log("food 2");
+                        }
+                        if (FoodChoice == 3)
+                        {
+                            Debug.Log("food 3");
+                        }
+                        if (FoodChoice == 4)
+                        {
+                            Debug.Log("food 4");
+                        }
+                        if (FoodChoice == 5)
+                        {
+                            Debug.Log("food 5");
+                        }
+                        if (FoodChoice == 6)
+                        {
+                            Debug.Log("food 6");
+                        }
+                        if (FoodChoice == 7)
+                        {
+                            Debug.Log("food 7");
+                        }
+                        if (FoodChoice == 8)
+                        {
+                            Debug.Log("food 8");
+                        }
+                        if (FoodChoice == 9)
+                        {
+                            Debug.Log("food 9");
+                        }
+                    }
+                }
+                if (Playroom == true)
+                {
+                    if (hit.collider.gameObject.tag == "Choice 1")
+                    {
+                        Debug.Log("Choice 1");
                     }
 
                     if (hit.collider.gameObject.tag == "Choice 2")
@@ -203,20 +323,70 @@ public class GameManager : MonoBehaviour
                     {
                         Debug.Log("Choice 6");
                     }
-
-                    if (hit.collider.gameObject.tag == "Choice 7")
+                }
+                if (Park == true)
+                {
+                    if (hit.collider.gameObject.tag == "Choice 1")
                     {
-                        Debug.Log("Choice 7");
+                        Debug.Log("Choice 1");
                     }
 
-                    if (hit.collider.gameObject.tag == "Choice 8")
+                    if (hit.collider.gameObject.tag == "Choice 2")
                     {
-                        Debug.Log("Choice 8");
+                        Debug.Log("Choice 2");
                     }
 
-                    if (hit.collider.gameObject.tag == "Choice 9")
+                    if (hit.collider.gameObject.tag == "Choice 3")
                     {
-                        Debug.Log("Choice 9");
+                        Debug.Log("Choice 3");
+                    }
+                }
+                if (Museum == true)
+                {
+                    if (hit.collider.gameObject.tag == "Choice 1")
+                    {
+                        Debug.Log("Choice 1");
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 2")
+                    {
+                        Debug.Log("Choice 2");
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 3")
+                    {
+                        Debug.Log("Choice 3");
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 4")
+                    {
+                        Debug.Log("Choice 4");
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice X")
+                    {
+                        Debug.Log("Choice 5");
+                    }
+
+                    if (hit.collider.gameObject.tag == "Choice 6")
+                    {
+                        Debug.Log("Choice 6");
+                    }
+                }
+                if (Diaper == true)
+                {
+                    //affect hygenie meter
+                    if (hit.collider.gameObject.tag == "Choice 1")
+                    {
+                        Debug.Log("diaper changed");
+                    }
+                }
+                if (Cleaning == true)
+                {
+                    //affect cleaning  meter
+                    if (hit.collider.gameObject.tag == "Choice 1")
+                    {
+                        Debug.Log("Clean");
                     }
                 }
 
@@ -233,6 +403,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Mainroom");
     }
 
-   
+
 
 }
