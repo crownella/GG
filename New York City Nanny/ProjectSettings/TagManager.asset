@@ -24,6 +24,32 @@ TagManager:
   - Choice 8
   - Choice 9
   - Choice X
+  - Text1
+  - Like Cars
+  - Dislike Cars
+  - Like Princesses
+  - Dislike Princesses
+  - Like Alphabet
+  - Dislike Alphabet
+  - Like PP
+  - Dislike PP
+  - Like Sports
+  - Dislike Sports
+  - Like Outdoors
+  - Dislike Outdoors
+  - Like SH
+  - Dislike SH
+  - Like Spanish
+  - Dislike Spanish
+  - Like Music
+  - Dislike Music
+  - Like Space
+  - Dislike Space
+  - Like CT
+  - Dislike CT
+  - Fridge
+  - DiaperChange
+  - Happiness
   layers:
   - Default
   - TransparentFX

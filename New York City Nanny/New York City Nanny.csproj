@@ -226,10 +226,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Appear.cs" />
+    <Compile Include="Assets\scripts\childwants.cs" />
     <Compile Include="Assets\scripts\GameManager.cs" />
     <Compile Include="Assets\scripts\makeinvisible.cs" />
     <Compile Include="Assets\scripts\RemoveCollider.cs" />
     <Compile Include="Assets\scripts\SetText.cs" />
+    <Compile Include="Assets\scripts\Startday.cs" />
     <Compile Include="Assets\scripts\StartGame.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

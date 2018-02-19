@@ -1,11 +1,29 @@
 sceneSetups:
+- path: Assets/scenes/Menu.unity
+  isLoaded: 1
+  isActive: 1
+- path: Assets/scenes/Debuff.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Mainroom.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/scenes/Bedroom.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Diaper.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Crib.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/scenes/Kitchen.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/scenes/Mainroom.unity
+- path: Assets/scenes/Feeding.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Playroom.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/scenes/Park.unity
@@ -14,18 +32,9 @@ sceneSetups:
 - path: Assets/scenes/Museum.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/scenes/Playroom.unity
+- path: Assets/scenes/Ending Scene.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/scenes/Menu.unity
-  isLoaded: 1
-  isActive: 1
-- path: Assets/scenes/Diaper.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/Feeding.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/Crib.unity
+- path: Assets/scenes/empty.unity
   isLoaded: 0
   isActive: 0

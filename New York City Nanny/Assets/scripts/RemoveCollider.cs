@@ -22,6 +22,7 @@ public class RemoveCollider : MonoBehaviour {
             else
             {
                 GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     }
