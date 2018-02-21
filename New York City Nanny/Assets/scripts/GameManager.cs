@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
     public bool Endgame = false;
     public bool BookChosen = false;
 
+    public bool naptime = false;
+    public float naptimer = 100;
+    public float npd = .01f; //naptimerdecrease
+    public bool napover = false;
+
 
     public int FoodChoice = 0;
     public bool FoodChosen = false;
@@ -42,11 +47,37 @@ public class GameManager : MonoBehaviour
     public float Hungerloss = .3f;
 
     public float timer = 100f;
-    public float timerspeed = .002f;
+    public float timerspeed = .001f;
     public bool gamestart = false;
-    
 
-    
+    public float hmi = 5; //happiness meter increase
+    public float hmd = -7; // happiness meter decrease 
+
+    //childwants
+    public int Rando;
+    public int Rando2;
+    public int Rando3;
+    public int Rando4;
+    public bool Cars = false;
+    public bool Princesses = false;
+    public bool Cartoons = false;
+    public bool Superheros = false;
+    public bool PlayingPretend = false;
+    public bool Spanish = false;
+    public bool Alphabet = false;
+    public bool Music = false;
+    public bool Outdoors = false;
+    public bool Sports = false;
+    public bool Space = false;
+    private string[] Childwants;
+    public string Childname = "Bobby";
+
+    public Text Wants;
+
+    //boredom array
+    public string[] bored;
+
+
 
     // Use this for initialization
     void Start()
@@ -54,6 +85,147 @@ public class GameManager : MonoBehaviour
         
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+
+        Rando = Random.Range(0, 10);
+        Rando2 = Random.Range(0, 10);
+        Rando3 = Random.Range(0, 10);
+        Rando4 = Random.Range(0, 10);
+
+        if (Rando < 3)
+        { Cars = true; }
+        if (Rando < 7)
+        { PlayingPretend = true; }
+        if (Rando > 6)
+        { Princesses = true; }
+        if (Rando2 > 4)
+        { Spanish = true; }
+        if (Rando2 < 6)
+        { Sports = true; }
+        if (Rando2 < 7)
+        { Space = true; }
+        if (Rando3 < 4)
+        { Alphabet = true; }
+        if (Rando3 > 6)
+        { Music = true; }
+        if (Rando3 < 7)
+        { Superheros = true; }
+        if (Rando4 < 3)
+        { Outdoors = true; }
+        if (Rando4 > 8)
+        { Cartoons = true; }
+
+
+        Childwants = new string[24];
+        if (Cars == true)
+        {
+            Childwants[1] = "cars,";
+            Childwants[12] = "";
+        }
+        else
+        {
+            Childwants[1] = "";
+            Childwants[12] = "cars,";
+        }
+        if (PlayingPretend == true)
+        {
+            Childwants[2] = "playing pretend,";
+            Childwants[13] = "";
+        }
+        else
+        {
+            Childwants[2] = "";
+            Childwants[13] = "playing pretend,";
+        }
+        if (Princesses == true)
+        {
+            Childwants[3] = "princesses,";
+            Childwants[14] = "";
+        }
+        else
+        {
+            Childwants[3] = "";
+            Childwants[14] = "princesses,";
+        }
+        if (Sports == true)
+        {
+            Childwants[4] = "sports,";
+            Childwants[15] = "";
+        }
+        else
+        {
+            Childwants[4] = "";
+            Childwants[15] = "sports,";
+        }
+        if (Outdoors == true)
+        {
+            Childwants[5] = "the outdoors,";
+            Childwants[16] = "";
+        }
+        else
+        {
+            Childwants[5] = "";
+            Childwants[16] = "the outdoors,";
+        }
+        if (Spanish == true)
+        {
+            Childwants[6] = "learning spanish,";
+            Childwants[17] = "";
+        }
+        else
+        {
+            Childwants[6] = "";
+            Childwants[17] = "learning spanish,";
+        }
+        if (Cartoons == true)
+        {
+            Childwants[7] = "cartoons,";
+            Childwants[18] = "";
+        }
+        else
+        {
+            Childwants[7] = "";
+            Childwants[18] = "cartoons,";
+        }
+        if (Superheros == true)
+        {
+            Childwants[8] = "superheros,";
+            Childwants[19] = "";
+        }
+        else
+        {
+            Childwants[8] = "";
+            Childwants[19] = "superheros,";
+        }
+        if (Music == true)
+        {
+            Childwants[9] = "music,";
+            Childwants[20] = "";
+        }
+        else
+        {
+            Childwants[9] = "";
+            Childwants[20] = "music,";
+        }
+        if (Alphabet == true)
+        {
+            Childwants[10] = "alphabet,";
+            Childwants[21] = "";
+        }
+        else
+        {
+            Childwants[10] = "";
+            Childwants[21] = "alphabet,";
+        }
+        if (Space == true)
+        {
+            Childwants[11] = "space,";
+            Childwants[22] = "";
+        }
+        else
+        {
+            Childwants[11] = "";
+            Childwants[22] = "space,";
+        }
 
     }
 
@@ -86,6 +258,9 @@ public class GameManager : MonoBehaviour
         if (Happiness >= 100)
         {
             happinesslimit = true;
+        }
+        else {
+            happinesslimit = false;
         }
 
         //hunger
@@ -195,7 +370,7 @@ public class GameManager : MonoBehaviour
 
                //clciking during certian scenes
 
-                else if (Door == true)
+                else if (Door == true && naptime == false)
                 {
 
                     if (hit.collider.gameObject.tag == "Park")
@@ -215,52 +390,31 @@ public class GameManager : MonoBehaviour
                         Door = false;
                     }
                 }
+                
 
-                else if (Crib == true) //choices for crib scene
+                else if (Crib == true && naptime == false) //choices for crib scene
                 {
                     //Debug.Log("Yay");
-                    if (hit.collider.gameObject.tag == "Choice 1")
+                    if (BookChosen == false)
                     {
-                        Debug.Log("Choice 1");
-                        Happinessmeter(5);
+                        
                         BookChosen = true;
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 2")
+                    if(BookChosen == true)
                     {
-                        Debug.Log("Choice 2");
-                        Happinessmeter(5);
-                        BookChosen = true;
+                        if (Rando2 < 9)
+                        {
+                            naptime = true;
+                        }
+                        else
+                        {
+                            Debug.Log(Childname + " won`t nap.");
+                        }
+                                 
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 3")
-                    {
-                        Debug.Log("Choice 3");
-                        Happinessmeter(5);
-                        BookChosen = true;
-                    }
-
-                    else if (hit.collider.gameObject.tag == "Choice 4")
-                    {
-                        Debug.Log("Choice 4");
-                        Happinessmeter(5);
-                        BookChosen = true;
-                    }
-
-                    else if (hit.collider.gameObject.tag == "Choice X")
-                    {
-                        Debug.Log("Choice 5");
-                        Happinessmeter(5);
-                        BookChosen = true;
-                    }
-
-                    else if (hit.collider.gameObject.tag == "Choice 6")
-                    {
-                        Debug.Log("Choice 6");
-                        Happinessmeter(5);
-                        BookChosen = true;
-                    }
+                    
                 }
+                
 
                 else if (Kitchen == true) //choices for kitchen scene
                 {
@@ -275,7 +429,8 @@ public class GameManager : MonoBehaviour
                         Fridge = true;
                     }
                 }
-                if(Fridge == true) {
+                
+                if (Fridge == true & naptime == false) {
                     
                     if (hit.collider.gameObject.tag == "Choice 1")
                     {
@@ -351,7 +506,7 @@ public class GameManager : MonoBehaviour
                 }
                 
                
-                else if (Feeding == true)
+                else if (Feeding == true && naptime == false)
                 {
                     if (hit.collider.gameObject.tag == "Choice X" && FoodChosen == true)
                     {
@@ -407,99 +562,139 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
-                else if (Playroom == true)
+                if(Kitchen == false && Feeding == false)
                 {
-                    if (hit.collider.gameObject.tag == "Choice 1")
+                    if (hit.collider.gameObject.tag == "Like Princesses")
                     {
-                        Debug.Log("Choice 1");
-                        Happinessmeter(5);
+                        if(Princesses == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 2")
+                    if (hit.collider.gameObject.tag == "Like Cars")
                     {
-                        Debug.Log("Choice 2");
-                        Happinessmeter(5);
+                        if (Cars == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 3")
+                    if (hit.collider.gameObject.tag == "Like Alphabet")
                     {
-                        Debug.Log("Choice 3");
-                        Happinessmeter(5);
+                        if (Alphabet == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 4")
+                    if (hit.collider.gameObject.tag == "Like PP")
                     {
-                        Debug.Log("Choice 4");
-                        Happinessmeter(5);
+                        if (PlayingPretend == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice X")
+                    if (hit.collider.gameObject.tag == "Like Sports")
                     {
-                        Debug.Log("Choice 5");
-                        Happinessmeter(5);
+                        if (Sports == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 6")
+                    if (hit.collider.gameObject.tag == "Like Outdoors")
                     {
-                        Debug.Log("Choice 6");
-                        Happinessmeter(5);
+                        if (Outdoors == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-                }
-                else if (Park == true)
-                {
-                    
-                    if (hit.collider.gameObject.tag == "Choice 1")
+                    if (hit.collider.gameObject.tag == "Like SH")
                     {
-                        Debug.Log("Choice 1");
-                        Happinessmeter(5);
+                        if (Superheros == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    else if (hit.collider.gameObject.tag == "Choice 2")
+                    if (hit.collider.gameObject.tag == "Like Spanish")
                     {
-                        Debug.Log("Choice 2");
-                        Happinessmeter(5);
+                        if (Spanish == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-
-                    if (hit.collider.gameObject.tag == "Choice 3")
+                    if (hit.collider.gameObject.tag == "Like Music")
                     {
-                        Debug.Log("Choice 3");
-                        Happinessmeter(5);
+                        if (Music == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-                }
-                else if (Museum == true)
-                {
-                    if (hit.collider.gameObject.tag == "Choice 1")
+                    if (hit.collider.gameObject.tag == "Like Space")
                     {
-                        Debug.Log("Choice 1");
+                        if (Space == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-                    if (hit.collider.gameObject.tag == "Choice 2")
+                    if (hit.collider.gameObject.tag == "Like CT")
                     {
-                        Debug.Log("Choice 2");
+                        if (Cartoons == true)
+                        {
+                            Happinessmeter(hmi);
+                        }
+                        else
+                        {
+                            Happinessmeter(hmd);
+                        }
                     }
-                    if (hit.collider.gameObject.tag == "Choice 3")
-                    {
-                        Debug.Log("Choice 3");
-                    }
-                    if (hit.collider.gameObject.tag == "Choice 4")
-                    {
-                        Debug.Log("Choice 4");
-                    }
-                    if (hit.collider.gameObject.tag == "Choice X")
-                    {
-                        Debug.Log("Choice 5");
-                    }
-                    if (hit.collider.gameObject.tag == "Choice 6")
-                    {
-                        Debug.Log("Choice 6");
-                    }
-                }
-                else if (Diaper == true)
+                } // makes choices affect happiness based on childs likes
+                
+                else if (Diaper == true && naptime == false)
                 {
                     //affect hygenie meter
                     if (hit.collider.gameObject.tag == "Choice X")
                     {
                         Debug.Log("diaper changed");
                         Happinessmeter(5);
+                        Hygenie += 40;
                     }
                 }
 
@@ -512,6 +707,130 @@ public class GameManager : MonoBehaviour
 
         }
         //this is outside point and click mechanic
+
+        if (Debuff == true)
+        {
+            Wants = GameObject.FindGameObjectWithTag("Text1").GetComponent<Text>();
+            Wants.text = (Childname) + " likes " + Childwants[1] + Childwants[2] + Childwants[3] + Childwants[4]
+                + Childwants[5] + Childwants[6] + Childwants[7] + Childwants[8] + Childwants[9] + Childwants[10]
+                + Childwants[11] + Childwants[12] + "and sweets, of course. " + Childname + " doesn't like " +
+                Childwants[12] + Childwants[13] + Childwants[14] + Childwants[15] + Childwants[16] + Childwants[17]
+                + Childwants[18] + Childwants[19] + Childwants[20] + Childwants[21] + Childwants[22] + " or anything green." +
+                " Remember to change her diaper, feed her, and keep the house clean.";
+
+
+            if (Cars == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Cars").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Cars").GetComponent<Image>().enabled = true;
+            }
+            else if (Cars == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Cars").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Cars").GetComponent<Image>().enabled = true;
+            }
+            if (Princesses == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Princesses").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Princesses").GetComponent<Image>().enabled = true;
+            }
+            else if (Princesses == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Princesses").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Princesses").GetComponent<Image>().enabled = true;
+            }
+            if (Alphabet == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Alphabet").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Alphabet").GetComponent<Image>().enabled = true;
+            }
+            else if (Alphabet == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Alphabet").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Alphabet").GetComponent<Image>().enabled = true;
+            }
+            if (PlayingPretend == false)
+            {
+                GameObject.FindGameObjectWithTag("Like PP").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike PP").GetComponent<Image>().enabled = true;
+            }
+            else if (PlayingPretend == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike PP").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like PP").GetComponent<Image>().enabled = true;
+            }
+            if (Sports == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Sports").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Sports").GetComponent<Image>().enabled = true;
+            }
+            else if (Sports == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Sports").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Sports").GetComponent<Image>().enabled = true;
+            }
+            if (Outdoors == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Outdoors").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Outdoors").GetComponent<Image>().enabled = true;
+            }
+            else if (Outdoors == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Outdoors").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Outdoors").GetComponent<Image>().enabled = true;
+            }
+            if (Superheros == false)
+            {
+                GameObject.FindGameObjectWithTag("Like SH").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike SH").GetComponent<Image>().enabled = true;
+            }
+            else if (Superheros == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike SH").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like SH").GetComponent<Image>().enabled = true;
+            }
+            if (Spanish == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Spanish").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Spanish").GetComponent<Image>().enabled = true;
+            }
+            else if (Spanish == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Spanish").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Spanish").GetComponent<Image>().enabled = true;
+            }
+            if (Music == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Music").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Music").GetComponent<Image>().enabled = true;
+            }
+            else if (Music == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Music").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Music").GetComponent<Image>().enabled = true;
+            }
+            if (Space == false)
+            {
+                GameObject.FindGameObjectWithTag("Like Space").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike Space").GetComponent<Image>().enabled = true;
+            }
+            else if (Space == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike Space").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like Space").GetComponent<Image>().enabled = true;
+            }
+            if (Cartoons == false)
+            {
+                GameObject.FindGameObjectWithTag("Like CT").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Dislike CT").GetComponent<Image>().enabled = true;
+            }
+            else if (Cartoons == true)
+            {
+                GameObject.FindGameObjectWithTag("Dislike CT").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("Like CT").GetComponent<Image>().enabled = true;
+            }
+        }
+
         //making choices appear/disappear
         if (Fridge == false && Kitchen == true)
         {
@@ -556,23 +875,66 @@ public class GameManager : MonoBehaviour
         }
         if(BookChosen == true && Crib == true)
         {
-            GameObject.FindGameObjectWithTag("Choice 1").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.FindGameObjectWithTag("Choice 1").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Cars").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Cars").GetComponent<BoxCollider2D>().enabled = false;
 
-            GameObject.FindGameObjectWithTag("Choice 2").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.FindGameObjectWithTag("Choice 2").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Princesses").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Princesses").GetComponent<BoxCollider2D>().enabled = false;
 
-            GameObject.FindGameObjectWithTag("Choice 3").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.FindGameObjectWithTag("Choice 3").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like SH").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like SH").GetComponent<BoxCollider2D>().enabled = false;
 
-            GameObject.FindGameObjectWithTag("Choice 4").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.FindGameObjectWithTag("Choice 4").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like CT").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like CT").GetComponent<BoxCollider2D>().enabled = false;
 
-            GameObject.FindGameObjectWithTag("Choice X").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.FindGameObjectWithTag("Choice X").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Space").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Space").GetComponent<BoxCollider2D>().enabled = false;
 
-            GameObject.FindGameObjectWithTag("Choice 6").GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.FindGameObjectWithTag("Choice 6").GetComponent<BoxCollider2D>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Spanish").GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.FindGameObjectWithTag("Like Spanish").GetComponent<BoxCollider2D>().enabled = false;
+        }
+        if(naptime == true)
+        {
+            naptimer -= npd;
+            if(Diaper == false && Crib == false && Feeding == false) {  //remove this when child avatar is added to these scenes
+                GameObject.FindGameObjectWithTag("Child").GetComponent<SpriteRenderer>().enabled = false;
+            }
+            
+            
+        }
+        if(naptimer < 0) // this isnt working and idk why
+        {
+            Debug.Log("napover");
+            naptime = false;
+            napover = true;
+        }
+        if(napover == true)
+        {
+            GameObject.FindGameObjectWithTag("Child").GetComponent<SpriteRenderer>().enabled = true;
+        }
+        if (Fridge == true && naptime == true)
+        {
+            Debug.Log(Childname + "is napping.");
+            Fridge = false;
+        }
+        if (Crib == true && naptime == true)
+        {
+            Debug.Log(Childname + "is still napping.");
+
+        }
+        if(Feeding == true && naptime == true)
+        {
+            Debug.Log(Childname + "is still napping.");
+        }
+        if (Door == true && naptime == true)
+        {
+            Debug.Log(Childname + "is napping.");
+            Door = false;
+        }
+        else if (Diaper == true && naptime == true)
+        {
+            Debug.Log(Childname + "is napping.");
+            
         }
     }
     
@@ -581,13 +943,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Debuff");
         Debuff = true;
     }
-    public void Happinessmeter(int number)
+    public void Happinessmeter(float number)
     {
         if (happinesslimit == false)
         {
             Happiness += number;
         }
     }
+    
 
 
 }

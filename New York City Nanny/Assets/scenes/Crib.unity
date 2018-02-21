@@ -180,11 +180,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_Name
-      value: Choice 2
+      value: Cartoon Book
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_TagString
-      value: Choice 2
+      value: Like CT
       objectReference: {fileID: 0}
     - target: {fileID: 212759657362951622, guid: 15dfa2e989d80f34db85053d3173e23e,
         type: 2}
@@ -304,11 +304,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_Name
-      value: Choice 1
+      value: Car Book
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_TagString
-      value: Choice 1
+      value: Like Cars
       objectReference: {fileID: 0}
     - target: {fileID: 212759657362951622, guid: 15dfa2e989d80f34db85053d3173e23e,
         type: 2}
@@ -543,11 +543,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_Name
-      value: Choice 6
+      value: Superhero Book
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_TagString
-      value: Choice 6
+      value: Like SH
       objectReference: {fileID: 0}
     - target: {fileID: 212759657362951622, guid: 15dfa2e989d80f34db85053d3173e23e,
         type: 2}
@@ -667,11 +667,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_TagString
-      value: Choice 4
+      value: Like Space
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_Name
-      value: Choice 4
+      value: Space Book
       objectReference: {fileID: 0}
     - target: {fileID: 212759657362951622, guid: 15dfa2e989d80f34db85053d3173e23e,
         type: 2}
@@ -791,11 +791,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_Name
-      value: Choice 3
+      value: Princess Book
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_TagString
-      value: Choice 3
+      value: Like Princesses
       objectReference: {fileID: 0}
     - target: {fileID: 212759657362951622, guid: 15dfa2e989d80f34db85053d3173e23e,
         type: 2}
@@ -995,11 +995,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_Name
-      value: Choice 5
+      value: Spanish Book
       objectReference: {fileID: 0}
     - target: {fileID: 1689934241618978, guid: 15dfa2e989d80f34db85053d3173e23e, type: 2}
       propertyPath: m_TagString
-      value: Choice X
+      value: Like Spanish
       objectReference: {fileID: 0}
     - target: {fileID: 212759657362951622, guid: 15dfa2e989d80f34db85053d3173e23e,
         type: 2}

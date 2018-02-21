@@ -50,6 +50,7 @@ TagManager:
   - Fridge
   - DiaperChange
   - Happiness
+  - Child
   layers:
   - Default
   - TransparentFX
