@@ -11,21 +11,9 @@ public class Appear : MonoBehaviour {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (gameManager != null)
-        {
-            if (gameManager.Door == true)
-            {
-                GetComponent<SpriteRenderer>().enabled = true;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }
-		
-        
-	}
+
+    // Update is called once per frame
+    void Update()
+    {
+    }
 }

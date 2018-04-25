@@ -1,11 +1,17 @@
 sceneSetups:
 - path: Assets/scenes/Menu.unity
   isLoaded: 1
+  isActive: 1
+- path: Assets/scenes/intro.unity
+  isLoaded: 0
   isActive: 0
-- path: Assets/scenes/Debuff.unity
+- path: Assets/scenes/phonecall.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/scenes/Mainroom.unity
+  isLoaded: 0
+  isActive: 0
+- path: Assets/scenes/Feeding.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/scenes/Bedroom.unity
@@ -17,19 +23,10 @@ sceneSetups:
 - path: Assets/scenes/Crib.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/scenes/Kitchen.unity
+- path: Assets/scenes/mainroomdirty.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/scenes/Feeding.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/Playroom.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/Park.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/scenes/Museum.unity
+- path: Assets/scenes/sleepingbaby.unity
   isLoaded: 0
   isActive: 0
 - path: Assets/scenes/Ending Scene.unity
@@ -37,4 +34,4 @@ sceneSetups:
   isActive: 0
 - path: Assets/scenes/empty.unity
   isLoaded: 1
-  isActive: 1
+  isActive: 0

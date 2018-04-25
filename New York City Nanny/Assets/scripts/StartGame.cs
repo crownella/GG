@@ -2,7 +2,8 @@
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
-    public 
+    public AudioClip doorknob;
+       
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +14,7 @@ public class StartGame : MonoBehaviour {
 	void Update () {
         if(Input.GetButtonDown("Start")){
             SceneManager.LoadScene("Mainroom");
+            
         }
     }
 }

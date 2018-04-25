@@ -12,18 +12,9 @@ public class RemoveCollider : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-        if (gameManager != null)
+	void Update () 
         {
-            if (gameManager.Door == true)
-            {
-                GetComponent<BoxCollider2D>().enabled = false;
-            }
-            else
-            {
-                GetComponent<SpriteRenderer>().enabled = false;
-                GetComponent<BoxCollider2D>().enabled = true;
-            }
+         
         }
-    }
+    
 }

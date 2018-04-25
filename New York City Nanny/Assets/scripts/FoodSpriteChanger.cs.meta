@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 2c2782fd0407cd54f98c5da2b992fcdc
+timeCreated: 1523840912
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - donut: {fileID: 21300012, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - donut1b: {fileID: 21300010, guid: b8e00572efcba3147a04c5179af6fb2a, type: 3}
+  - donut2b: {fileID: 21300010, guid: 8a19c5c98aaa7aa438de5729aa193b93, type: 3}
+  - donut3b: {fileID: 21300016, guid: a7ed2966e0e0d11429c1cea8ba4d4926, type: 3}
+  - cupcake: {fileID: 21300006, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - cupcake1b: {fileID: 21300004, guid: b8e00572efcba3147a04c5179af6fb2a, type: 3}
+  - cupcake2b: {fileID: 21300006, guid: 8a19c5c98aaa7aa438de5729aa193b93, type: 3}
+  - cupcake3b: {fileID: 21300006, guid: a7ed2966e0e0d11429c1cea8ba4d4926, type: 3}
+  - oatmeal: {fileID: 21300008, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - oatmeal1b: {fileID: 21300006, guid: b8e00572efcba3147a04c5179af6fb2a, type: 3}
+  - oatmeal2b: {fileID: 21300012, guid: 8a19c5c98aaa7aa438de5729aa193b93, type: 3}
+  - oatmeal3b: {fileID: 21300010, guid: a7ed2966e0e0d11429c1cea8ba4d4926, type: 3}
+  - apple: {fileID: 21300002, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - apple1b: {fileID: 21300002, guid: b8e00572efcba3147a04c5179af6fb2a, type: 3}
+  - apple2b: {fileID: 21300002, guid: 8a19c5c98aaa7aa438de5729aa193b93, type: 3}
+  - apple3b: {fileID: 21300002, guid: a7ed2966e0e0d11429c1cea8ba4d4926, type: 3}
+  - banana: {fileID: 21300010, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - banana1b: {fileID: 21300010, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - banana2b: {fileID: 21300008, guid: b8e00572efcba3147a04c5179af6fb2a, type: 3}
+  - banana3b: {fileID: 21300012, guid: a7ed2966e0e0d11429c1cea8ba4d4926, type: 3}
+  - chicken: {fileID: 21300000, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - chicken1b: {fileID: 21300000, guid: b8e00572efcba3147a04c5179af6fb2a, type: 3}
+  - chicken2b: {fileID: 21300000, guid: 8a19c5c98aaa7aa438de5729aa193b93, type: 3}
+  - chicken3b: {fileID: 21300000, guid: a7ed2966e0e0d11429c1cea8ba4d4926, type: 3}
+  - blank: {fileID: 21300004, guid: d7fcb612362d781429877948cd15e754, type: 3}
+  - gameManager: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

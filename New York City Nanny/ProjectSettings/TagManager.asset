@@ -26,31 +26,53 @@ TagManager:
   - Choice X
   - Text1
   - Like Cars
-  - Dislike Cars
   - Like Princesses
-  - Dislike Princesses
   - Like Alphabet
-  - Dislike Alphabet
-  - Like PP
-  - Dislike PP
   - Like Sports
-  - Dislike Sports
-  - Like Outdoors
-  - Dislike Outdoors
-  - Like SH
-  - Dislike SH
   - Like Spanish
-  - Dislike Spanish
   - Like Music
-  - Dislike Music
   - Like Space
-  - Dislike Space
-  - Like CT
-  - Dislike CT
   - Fridge
   - DiaperChange
   - Happiness
   - Child
+  - score
+  - clean
+  - diaper
+  - canvas
+  - bedroomdoor
+  - dooropen
+  - Fridgeopen
+  - Food
+  - Mouth
+  - Blanket
+  - Eyes
+  - dirt
+  - muck
+  - Phone
+  - Screen
+  - alert
+  - timer
+  - Mop
+  - Broom
+  - Halfmop
+  - Halfbroom
+  - door
+  - canvas1
+  - canvas2
+  - Likes(1)
+  - Likes
+  - Baby
+  - Name
+  - Chart
+  - Chew
+  - Pixel
+  - Like Puzzles
+  - Like Animals
+  - Like PP
+  - Like Robots
+  - Toybox
+  - bubble
   layers:
   - Default
   - TransparentFX
@@ -60,7 +82,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Above
   - 
   - 
   - 
@@ -85,6 +107,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: top
+    uniqueID: 2919901213
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: above
+    uniqueID: 2422063423
     locked: 0
